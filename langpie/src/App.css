@@ -4,7 +4,15 @@
 }
 
 .nav-container{
-background-color: #EA580C;
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=ed681c&c2=f4d1b7&gt=l&gd=dtl
+*/
+background: #ED681C;
+/* background: linear-gradient(135deg, #ED681C, #F4D1B7);
+background: linear-gradient(135deg, #ED681C, #F4D1B7); */
+background: linear-gradient(135deg, #ED681C 0%, #ED681C 60%, #F4D1B7 100%);
+
 position: sticky;
 top: 0;
 height: 70px;
@@ -45,8 +53,6 @@ justify-content: space-between;
   margin: auto
 }
 
-
-
 .add-word-modal-container{
   display: "fixed";
   position: absolute;
@@ -86,12 +92,42 @@ tr, th, td{
   height: 15vw;
   border: 2px solid #EA580C;
   border-radius: 15px;
-}
-
-table, th, td {
-  border: 1px solid black;
-}
+} 
 
 table {
   border-collapse: collapse;
+}
+
+.table-content {
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20ox rgba(0, 0, 0, 0.15);
+}
+
+.table-content thead tr {
+  background-color: #fb7b36;
+  color: #ffff;
+  text-align: left; /* most modern web browsers like chrome tend to align header to the center, this makes it aligned to the data*/
+  font-weight: bold;
+
+}
+
+.table-content th,
+.table-content td {
+  padding: 12px 15px
+}
+
+.table-content tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-content tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table-content tbody tr:last-of-type {
+  border-bottom: 2px solid #EA580C;
 }

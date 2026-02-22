@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import WordList from './pages/WordList';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Card from './components/Card/Card';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/wordlist",
     element: <WordList />
+  },
+  {
+    path: "/card",
+    element: <Card />
   }
 ])
 

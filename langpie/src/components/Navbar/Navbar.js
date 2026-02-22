@@ -1,5 +1,5 @@
-import navIcon from "../images/navIcon.png"
-import de from "../images/de.png"
+import navIcon from "../../images/navIcon.png"
+import de from "../../images/de.png"
 import {Link} from "react-router-dom";
 
 export default function Navbar(){
