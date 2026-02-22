@@ -2,7 +2,7 @@ import React, { useContext} from "react";
 import Card from '@mui/material/Card';
 import {Link} from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
-import AddWord from "../components/AddWord";
+import AddWord from "../components/AddWord/AddWord";
 import {modalContext} from "../App";
 import nature from "../images/nature.png";
 import science from "../images/science.png";
@@ -11,7 +11,7 @@ import body from "../images/body.png";
 import fruits from "../images/fruits.png";
 import general from "../images/general.png";
 import greetings from "../images/greetings.png";
-import Decks from "../components/Decks";
+import Decks from "../components/Decks/Decks";
 import Portal from "../components/Portal/Portal";
 
 export default function Home(){
@@ -38,7 +38,7 @@ export default function Home(){
         <div className='row2-container'>
         
         <h3 style={{marginLeft: "30px", marginTop: "50px", marginBottom: "30px", gridColumn: "1"}}>Words by category</h3>
-        <Link to="/wordlist" style={{gridColumn: "1", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "1", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px"}}>
         <div style={{marginLeft: '10px'}}>
         <div style={{display: 'flex', alignItems: 'center'}}>
@@ -52,7 +52,7 @@ export default function Home(){
         </Link>
 
 
-        <Link to="/wordlist" style={{gridColumn: "2", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "2", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px", gridColumn: "1", gridRow:"2"}}>
         <div style={{marginLeft: '10px'}}>
         <div style={{display: 'flex', alignItems: 'center'}}>
@@ -64,7 +64,7 @@ export default function Home(){
         </Card>
         </Link>
 
-        <Link to="/wordlist" style={{gridColumn: "3", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "3", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px", gridColumn: "2"}}>
         <div style={{marginLeft: '10px'}}>
         <div style={{display: 'flex', alignItems: 'center'}}>
@@ -76,7 +76,7 @@ export default function Home(){
         </Card>
         </Link>
 
-        <Link to="/wordlist" style={{gridColumn: "1", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "1", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px", gridColumn: "2"}}>
         <div style={{marginLeft: '10px'}}>
         <div style={{display: 'flex', alignItems: 'center'}}>
@@ -89,7 +89,7 @@ export default function Home(){
         </Card>
         </Link>
 
-        <Link to="/wordlist" style={{gridColumn: "2", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "2", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px"}}>
         <div style={{marginLeft: '10px'}}>
         <div style={{display: 'flex', alignItems: 'center'}}>
@@ -101,7 +101,7 @@ export default function Home(){
         </Card>
         </Link>
 
-        <Link to="/wordlist" style={{gridColumn: "3", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "3", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px"}}>
         <div style={{marginLeft: '10px'}}>
         <div style={{display: 'flex', alignItems: 'center'}}>
@@ -112,7 +112,7 @@ export default function Home(){
         </div>
         </Card>
         </Link>
-        <Link to="/wordlist" style={{gridColumn: "1", marginLeft: "40px", textDecoration: 'none'}}>
+        <Link to="/card" style={{gridColumn: "1", marginLeft: "40px", textDecoration: 'none'}}>
         <Card elevation='5' sx={{maxWidth: "250px", marginRight: "20px", height: "100px"}}>
         <div style={{marginLeft: '10px'}}>
             <div style={{display: 'flex', alignItems: 'center'}}>
