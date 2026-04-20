@@ -54,7 +54,7 @@ export default function AddWord(){
                 <div className='input-group'>
                 {/* <label htmlFor='' */}
                 <input type="text" value={front} onChange={e => setFront(e.target.value)} placeholder="Front"/><br/>
-                <input type="text" value={back} onChange={e => setBack(e.target.value)}  placeholder="Back"/><br/>
+                <textarea value={back} rows="4" cols="30" onChange={e => setBack(e.target.value)}  placeholder="Back" style={{marginLeft: "8px"}}/><br/>
                 <select onChange={e => setDeck(e.target.value)}>
                     {selectOptions.map(el => {
                         return <option value={el} key={el}>{el}</option>

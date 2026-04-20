@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Card from '@mui/material/Card';
 import {Link} from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
@@ -14,11 +14,23 @@ import greetings from "../images/greetings.png";
 import Decks from "../components/Decks/Decks";
 import Portal from "../components/Portal/Portal";
 import Button from '@mui/material/Button';
+import axios from "axios";
 
 export default function Home(){
 
-    
-    const {isModalClosed, setIsModalClosed} = useContext(modalContext); 
+    const {isModalClosed, setIsModalClosed} = useContext(modalContext);
+    const [idiom, setIdiom] = useState("");
+    const [showIdiomMeaning, setShowIdiomMeaning] = useState(false);
+
+    useEffect(() => {
+        axios.get('http://localhost:4200/v1/flashcards/idioms')
+        .then(res => {
+            setIdiom(res.data)
+            console.log(res.data);
+        })
+        .catch(err => console.log('failed to fetch to Idiom', err));
+    }, []);
+
     return(
         <>
         <div className="home-container">
@@ -35,7 +47,7 @@ export default function Home(){
         <Decks />
         
 
-
+        {idiom? <div style={{marginLeft: "30px", marginTop: "50px"}}><h3 style={{display: "inline-block"}}>Idioms - </h3> <span style={{fontFamily: 'Caveat', fontSize: '18px', marginLeft: "10px"}}>"{idiom?.idiom}" </span></div> : null}
         </div>
         <div className='row2-container'>
         

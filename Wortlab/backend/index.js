@@ -6,11 +6,8 @@ app.use(cors({origin: 'http://localhost:3000'}));
 const mongoose = require("mongoose");
 app.use(express.json());
 const flashCardRoute = require("./routers/flashcards.route");
+const Idioms = require("./db/Idioms.model");
 const port = process.env.PORT || 4200;
-
-// app.use("/", (res) => {
-//     res.send("Hello from the backend");
-// });
 
 app.use("/v1/flashcards", flashCardRoute);
 
