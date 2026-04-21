@@ -13,6 +13,7 @@ export default function Decks(){
                     <th>Deck</th>
                     <th style={{paddingLeft: "100px", color: '#008000'}}>New</th>
                     <th style={{paddingLeft: "30px", color: '#fa0004ff'}}>Due</th>
+                    <th style={{paddingLeft: "30px", color: '#0d0df3'}}>Total</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,7 +21,9 @@ export default function Decks(){
                     decks.map(el => {
                         return <tr><td><Link style={{textDecoration:"none", color: "black"}} to="/card" target="_blank">{el[0]}</Link></td>
                         <td style={{paddingLeft: "100px"}}>{el[1]}</td>
-                        <td style={{paddingLeft: "30px"}}>{el[2]}</td></tr>
+                        <td style={{paddingLeft: "30px"}}>{el[2]}</td>
+                        <td style={{paddingLeft: "30px"}}>{el[1] + el[2]}</td>
+                        </tr>
 
                     })
                 }

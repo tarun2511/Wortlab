@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Word = require("../db/word.model");
 const Idioms = require("../db/Idioms.model");
+const NVVs = require("../db/NVV.model");
 
 
 router.get("/", async (req, res) => {
@@ -20,14 +21,25 @@ router.get("/", async (req, res) => {
 
 router.get("/idioms", async(req, res) => {
     try {
-        const res = await Idioms.find({});
-        const idioms = res.slice(new Date().getDate() % res.length, (new Date().getDate() % res.length) + 5);
+        const response = await Idioms.find({});
+        const idioms = response.slice(new Date().getDate() % response.length, (new Date().getDate() % response.length) + 5);
         res.status(200).json(idioms);
     } catch (err) {
         res.status(400).send(err);
+        console.log(err);
     }
 })
 
+router.get("/nvvs", async(req, res) => {
+    try {
+        const response = await NVVs.find({});
+        const nvvs = response.slice(new Date().getDate() % response.length, (new Date().getDate() % response.length) + 5);
+        res.status(200).json(nvvs);
+    } catch (err) {
+        res.status(400).send(err);
+        console.log(err);
+    }
+})
 
 router.post("/addWord", async(req, res) => {
     try{

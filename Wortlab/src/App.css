@@ -28,7 +28,7 @@ justify-content: space-between;
 
 .home-container{
   display: grid;
-  grid-template-rows: 400px 1fr 1fr 1fr;
+  grid-template-rows: 380px 280px 1fr 1fr;
 }
 
 
@@ -38,12 +38,17 @@ justify-content: space-between;
 
 
 .row2-container{
-  width: 80vw;
   grid-row: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.row3-container{
+  grid-row: 3;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  row-gap: 10px
+  row-gap: 2rem
 
 }
 
@@ -101,7 +106,7 @@ table {
 .table-content {
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
+  min-width: 750px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20ox rgba(0, 0, 0, 0.15);

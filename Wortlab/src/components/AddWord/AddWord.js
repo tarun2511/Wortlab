@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import Button from '@mui/material/Button';
 import CancelIcon from '@mui/icons-material/Cancel';
 import {modalContext} from "../../App";
@@ -6,11 +6,12 @@ import axios from 'axios';
 import './AddWord.css';
 import { DECKS } from "../../constants";
 
-export default function AddWord(){
+export default function AddWord({ setIsAddWordSuccess, setIsAddWordError }) {
     const [front, setFront] = useState("");
     const [back, setBack] = useState("");
     const [deck, setDeck] = useState(DECKS.GENERAL);
     const selectOptions = Object.values(DECKS);
+    const timeoutRef = React.useRef(null);
 
 
     const {setIsModalClosed} = useContext(modalContext);
@@ -27,17 +28,35 @@ export default function AddWord(){
                 }
             });
             console.log('word successfully added');
+            setIsAddWordSuccess(true);
+            setTimeout(() => setIsAddWordSuccess(false), 2000);
         }
         catch (err) {
             console.log(err);
+            setIsAddWordError(true);
+            setTimeout(() => setIsAddWordError(false), 2000);
+            throw err;
         }
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        addWord();
-        setIsModalClosed(true);
-    } 
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+
+    const handleSubmit = async (e) => {
+        try {
+             e.preventDefault();
+            await addWord();
+            setIsModalClosed(true);
+        } catch (err) {
+            console.error('Error adding word:', err);
+            setIsModalClosed(true);
+        }
+    }
 
     const closeModal = () => {
         setIsModalClosed(true);

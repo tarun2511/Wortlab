@@ -5,5 +5,6 @@ export const DECKS = {
     FOOD: "Food",
     GREETINGS: "Greetings",
     SCIENCE: "Science",
-    BODY_PARTS: "Body parts"
+    BODY_PARTS: "Body parts",
+    TECH: "Tech"
 };
