@@ -5,6 +5,10 @@ import {modalContext} from "../../App";
 import axios from 'axios';
 import './AddWord.css';
 import { DECKS } from "../../constants";
+import Textarea from '@mui/joy/Textarea';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 export default function AddWord({ setIsAddWordSuccess, setIsAddWordError }) {
     const [front, setFront] = useState("");
@@ -72,13 +76,13 @@ export default function AddWord({ setIsAddWordSuccess, setIsAddWordError }) {
                 <form method="POST" onSubmit={handleSubmit} className='form'>
                 <div className='input-group'>
                 {/* <label htmlFor='' */}
-                <input type="text" value={front} onChange={e => setFront(e.target.value)} placeholder="Front"/><br/>
-                <textarea value={back} rows="4" cols="30" onChange={e => setBack(e.target.value)}  placeholder="Back" style={{marginLeft: "8px"}}/><br/>
-                <select onChange={e => setDeck(e.target.value)}>
+                <Textarea name="Solid" value={front} onChange={e => setFront(e.target.value)} sx={{width: "25vw", margin: "8px"}} placeholder="Front" variant="soft" />
+                <Textarea minRows={4} value={back} onChange={e => setBack(e.target.value)}  placeholder="Back" variant="soft" sx={{width: "25vw", margin: "20px 8px 8px 8px"}}/><br/>
+                {/* <select onChange={e => setDeck(e.target.value)}>
                     {selectOptions.map(el => {
                         return <option value={el} key={el}>{el}</option>
                     })}
-                </select>
+                </select> */}
                 </div>
                 <Button variant="contained" type="submit" onClick={handleSubmit} sx={{width:"20px", height: "25px",margin: '8px', textTransform: "none"}}>Add</Button>
                 </form>

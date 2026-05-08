@@ -3,6 +3,10 @@
   padding: 0
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 .nav-container{
 /*
 * Created with https://www.css-gradient.com
@@ -19,6 +23,7 @@ height: 70px;
 color: #593d88;
 display: flex;
 justify-content: space-between;
+z-index: 999;
 }
 
 .nav-left{
@@ -28,7 +33,7 @@ justify-content: space-between;
 
 .home-container{
   display: grid;
-  grid-template-rows: 380px 280px 1fr 1fr;
+  grid-template-rows: 350px 350px 1fr 1fr;
 }
 
 
@@ -93,8 +98,8 @@ tr, th, td{
   background: white;
   padding: 20px;
   z-index: 1001;
-  width: 20vw;
-  height: 15vw;
+  width: 30vw;
+  height: 20vw;
   border: 2px solid #EA580C;
   border-radius: 15px;
 } 

@@ -44,32 +44,31 @@ export default function Home(){
             {isAddWordError && <Alert severity="error">Failed to add the word. Please try again.</Alert> }
         <div style={{display: "flex", marginLeft: "30px", marginTop: "50px", marginBottom: "30px", alignItems: 'center'}}>
         <h3>Your decks</h3>
-        <AddIcon onClick={e => setIsModalClosed(false)}/>
         {
             !isModalClosed && <Portal><AddWord setIsModalClosed={setIsModalClosed} setIsAddWordSuccess={setIsAddWordSuccess} setIsAddWordError={setIsAddWordError}/></Portal>
         }
         <Button variant="contained" color='success' onClick={e => setIsModalClosed(false)} sx={{width:"110px", height: "35px",margin: '8px', textTransform: "none", marginLeft: 'auto'}}>Add Word</Button>
         </div>
 
-        <Decks />
+        {/* <Decks /> */}
         </div>
         
         <div style={{marginLeft: "30px", marginTop: "50px"}} className='row2-container'>
             {idiom?
             <div>
                 
-                <Paper elevation={3} sx={{height: "150px", width: "18vw", marginLeft: "1rem", marginTop: "1rem", borderRadius: "10px", padding: "30px", display: "inline-block", "&:hover": {boxShadow: "0px 0px 10px 3px #ED681C", cursor: "pointer", width: "20vw", height: "170px"}, transition: "0.3s"}}>
+                <Paper elevation={3} sx={{height: "200px", width: "18vw", marginLeft: "1rem", marginTop: "1rem", borderRadius: "10px", padding: "30px", display: "inline-block", "&:hover": {boxShadow: "0px 0px 10px 3px #ED681C", cursor: "pointer", width: "20vw", height: "220px"}, transition: "0.3s"}}>
                     <h3>Idioms</h3>
-                    <ul style={{listStyle: "none", padding: "10px"}}>
+                    <ul style={{listStyle: "none", padding: "10px", lineHeight: "1.8"}}>
                         {idiom.map((item, index) => {
                             return <li><span>{item.idiom}</span></li>
                         })}
                     </ul>
                 </Paper>
                 
-                <Paper elevation={3} sx={{height: "150px", width: "18vw", marginLeft: "1rem", marginTop: "1rem", borderRadius: "10px", padding: "30px", display: "inline-block", marginLeft: "50px","&:hover": {boxShadow: "0px 0px 10px 3px #ED681C", cursor: "pointer", width: "20vw", height: "170px"}, transition: "0.3s"}}>
+                <Paper elevation={3} sx={{height: "200px", width: "18vw", marginTop: "1rem", borderRadius: "10px", padding: "30px", display: "inline-block", marginLeft: "50px","&:hover": {boxShadow: "0px 0px 10px 3px #ED681C", cursor: "pointer", width: "20vw", height: "220px"}, transition: "0.3s"}}>
                     <h3>Nomen-Verb-Verbindungen</h3>
-                    <ul style={{listStyle: "none", padding: "10px"}}>
+                    <ul style={{listStyle: "none", padding: "10px", lineHeight: "1.8"}}>
                         {idiom.map((item, index) => {
                             return <li><span>{item.idiom}</span></li>
                         })}
